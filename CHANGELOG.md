@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2015-03-18)
+
+ * Version bump, includes README.md and working .travis.yml
+
 ## 0.2.0 (2015-03-18)
 
   * Add new assertions: nil, t, includes, kind-of

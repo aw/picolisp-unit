@@ -4,7 +4,7 @@
 
 This library can be used for Unit Testing your [PicoLisp](http://picolisp.com/) code.
 
-![picolisp-unit](https://cloud.githubusercontent.com/assets/153401/6709935/073406ae-cd75-11e4-9b62-788356dc0aff.png)
+![picolisp-unit](https://cloud.githubusercontent.com/assets/153401/6712097/b1b77e14-cd82-11e4-9603-cae666b8655d.png)
 
   1. [Requirements](#requirements)
   2. [Getting Started](#getting-started)

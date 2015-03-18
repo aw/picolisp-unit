@@ -2,7 +2,7 @@
 
 [setq MODULE_INFO
   '(("name"       "unit")
-    ("version"    "0.2.0")
+    ("version"    "0.2.1")
     ("summary"    "Unit Testing framework for PicoLisp")
     ("source"     "https://github.com/aw/picolisp-unit.git")
     ("author"     "Alexander Williams")
