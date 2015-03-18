@@ -2,7 +2,7 @@
 
 [setq MODULE_INFO
   '(("name"       "unit")
-    ("version"    "0.1.0")
+    ("version"    "0.1.1")
     ("summary"    "Unit Testing framework for PicoLisp")
     ("source"     "https://github.com/aw/picolisp-unit.git")
     ("author"     "Alexander Williams")
@@ -116,7 +116,7 @@
 # public
 (de execute @
   (mapcar
-    '((N) (prin (inc '*Counter) ") ") (eval N))
+    '((N) (prin (align 3 (inc '*Counter)) ") ") (eval N))
     (randomize (rest)) ]
 
 [de assert-equal (Expected Result Message)
