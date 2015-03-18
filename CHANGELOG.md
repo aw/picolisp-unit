@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 (2015-03-18)
+
+  * Ensure expected/actual results are displayed correctly
+
 ## 0.1.1 (2015-03-18)
 
   * Adjust alignment of unit test numbers

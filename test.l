@@ -6,6 +6,6 @@
 
 (chdir "test/"
   (mapcar load (filter '((N) (sub? "test_" N)) (dir "."))) )
-  # (mapcar load '("test_internal.l" "test_public.l" "test_unit.l")) ) # same as above
+  # (mapcar load '("test_internal.l" "test_unit.l")) ) # same as above
 
 (report)

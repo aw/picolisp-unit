@@ -2,7 +2,7 @@
 
 [setq MODULE_INFO
   '(("name"       "unit")
-    ("version"    "0.1.1")
+    ("version"    "0.1.2")
     ("summary"    "Unit Testing framework for PicoLisp")
     ("source"     "https://github.com/aw/picolisp-unit.git")
     ("author"     "Alexander Williams")
@@ -94,18 +94,20 @@
           (colour) ]
 
 [de print-expected (Result)
-  (prinl  (align 8 " ")
-          "Expected: "
-          (colour "green")
-          Result
-          (colour) ]
+  (prin (align 8 " ")
+        "Expected: "
+        (colour "green") )
+
+  (println Result)
+  (colour) ]
 
 [de print-got (Result)
-  (prinl  (align 8 " ")
-          (align 10 " Actual: ")
-          (colour "red")
-          Result
-          (colour) ]
+  (prin (align 8 " ")
+        (align 10 " Actual: ")
+        (colour "red") )
+
+  (println Result)
+  (colour) ]
 
 [de exit-gracefully ()
   (if (gt0 (length *Failed))
