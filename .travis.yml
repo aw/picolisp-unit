@@ -1,0 +1,14 @@
+language: bash
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y build-essential zlibc make libc6-dev-i386 git-core autoconf libtool clang libxml2-dev
+
+before_script:
+  - ./build.sh
+  - wget http://software-lab.de/picoLisp-3.1.9.tgz -O /tmp/picolisp.tgz
+  - cd /tmp; tar -xvf /tmp/picolisp.tgz
+  - cd /tmp/picoLisp/src && make && cd ../src64 && make
+
+script:
+  - cd ${TRAVIS_BUILD_DIR} && /tmp/picoLisp/pil test.l

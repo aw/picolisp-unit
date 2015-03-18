@@ -2,7 +2,7 @@
 
 [setq MODULE_INFO
   '(("name"       "unit")
-    ("version"    "0.1.2")
+    ("version"    "0.2.0")
     ("summary"    "Unit Testing framework for PicoLisp")
     ("source"     "https://github.com/aw/picolisp-unit.git")
     ("author"     "Alexander Williams")
@@ -125,6 +125,33 @@
   (if (= Expected Result)
       (passed Message)
       (failed Expected Result Message) ]
+
+[de assert-nil (Result Message)
+  (if Result
+      (failed NIL Result Message)
+      (passed Message) ]
+
+[de assert-t (Result Message)
+  (if (=T Result)
+      (passed Message)
+      (failed T Result Message) ]
+
+[de assert-includes (String List Message)
+  (if (sub? String List)
+      (passed Message)
+      (failed (pack String " in " List) String Message) ]
+
+[de assert-kind-of (Type Value Message)
+  (let Result
+    (cond ((flg? Value) 'Flag)
+          ((str? Value) 'String)
+          ((num? Value) 'Number)
+          ((lst? Value) 'List)
+          ((atom Value) 'Atom) )
+
+    (if (= Type Result)
+        (passed Message)
+        (failed (pack Value " should be of type " Type) Result Message) ]
 
 (de report ()
   (print-report) )
