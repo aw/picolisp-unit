@@ -1,13 +1,13 @@
 (when symbols (symbols 'unit 'pico))
 
-[setq MODULE_INFO
-  '(("name"       "unit")
-    ("version"    "0.2.1")
-    ("summary"    "Unit Testing framework for PicoLisp")
-    ("source"     "https://github.com/aw/picolisp-unit.git")
-    ("author"     "Alexander Williams")
-    ("license"    "MIT")
-    ("copyright"  "(c) 2015 Alexander Williams, Unscramble <license@unscramble.jp>") ]
+[de MODULE_INFO
+  ("name"       "unit")
+  ("version"    "0.3.0")
+  ("summary"    "Unit Testing framework for PicoLisp")
+  ("source"     "https://github.com/aw/picolisp-unit.git")
+  ("author"     "Alexander Williams")
+  ("license"    "MIT")
+  ("copyright"  "(c) 2015 Alexander Williams, Unscramble <license@unscramble.jp>") ]
 
 (setq
   *Colours  '(("red"    . 1)
@@ -37,6 +37,9 @@
       List
       (by '((N) (rand 1 (size List))) sort List) ]
 
+[de plural? (String)
+  (when (not (= (length String) 1)) "s") ]
+
 [de passed @
   (prinl  (colour "green")
           (char (hex "2713"))
@@ -61,11 +64,11 @@
           "----^J"
           (colour "green")
           *Passed
-          " test" (when (not (= *Passed 1)) "s")
+          " test" (plural? *Passed)
           " passed, "
           (colour "red")
           (length *Failed)
-          " test" (when (not (= (length *Failed) 1)) "s")
+          " test" (plural? *Failed)
           " failed"
           (colour) )
 
@@ -74,7 +77,7 @@
 
 (de report-failed ()
   (when *Failed
-    (prinl "^J" (colour "red") "^J  Failed test" (when (not (= (length *Failed) 1)) "s") ": ")
+    (prinl "^J" (colour "red") "^J  Failed test" (plural? *Failed) ": ")
 
     (mapcar
       '((N) (print-error (car N) (cdddr N))
@@ -152,6 +155,12 @@
     (if (= Type Result)
         (passed Message)
         (failed (pack Value " should be of type " Type) Result Message) ]
+
+[de assert-throws (Type Error Result Message)
+  (let Result (catch Type (eval Result) NIL)
+    (if (= Error Result)
+        (passed Message)
+        (failed Error Result Message) ]
 
 (de report ()
   (print-report) )

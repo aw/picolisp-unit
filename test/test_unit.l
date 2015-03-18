@@ -12,4 +12,5 @@
   '(assert-kind-of  'String "picolisp"  "(assert-kind-of) should assert a String")
   '(assert-kind-of  'Number 42  "(assert-kind-of) should assert a Number")
   '(assert-kind-of  'List (1 2 3 4)  "(assert-kind-of) should assert a List")
-  '(assert-kind-of  'Atom 'atom  "(assert-kind-of) should assert a Atom") ]
+  '(assert-kind-of  'Atom 'atom  "(assert-kind-of) should assert a Atom")
+  '(assert-throws   'InternalError '(UnitTestError . "Unit test throws an error") '(throw 'InternalError (cons 'UnitTestError "Unit test throws an error")) "(assert-throws) should assert a thrown error") ]

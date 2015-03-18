@@ -48,13 +48,14 @@ There exists a few public functions: `(execute)`, `(report)`, and a bunch of `(a
 
 Only a few assertions exist for the moment; more [can](#contributing)/will be added.
 
-| Assertion + Arguments | Example |
-| --------------------- | ------- |
-| (assert-equal Expected Result Message) | `(assert-equal 0 0 "It must be zero")` |
-| (assert-nil Result Message) | `(assert-nil NIL "It must be NIL")` |
-| (assert-t Result Message) | `(assert-t T "I pity the fool!")` |
-| (assert-includes String List Message) | `(assert-includes "abc" '("xyzabcdef") "It includes abc")` |
-| (assert-kind-of Type Value Message) | `(assert-equal 'Number 42 "The answer..")` |
+| Assertion | Arguments | Example |
+| :----------| :---------: | :-------: |
+| (assert-equal) | Expected Result Message | `(assert-equal 0 0 "It must be zero")` |
+| (assert-nil) | Result Message | `(assert-nil NIL "It must be NIL")` |
+| (assert-t) | Result Message | `(assert-t T "I pity the fool!")` |
+| (assert-includes) | String List Message | `(assert-includes "abc" '("def") "It includes abc")` |
+| (assert-kind-of) | Type Value Message | `(assert-equal 'Number 42 "The answer..")` |
+| (assert-throws) | Type Error 'Result Message | `(assert-throws 'Err "fail" '(throw 'Err "fail") "Throws a fail")` |
 
 ### (assert-kind-of) types
 
@@ -75,6 +76,7 @@ There are 5 types currently defined:
   * If your tests are **order dependent**, then you can: `(setq *My_tests_are_order_dependent T)`
   * Colours and bold text are only displayed if your terminal supports it, and if your system has the `tput` command.
   * The `(assert-includes)` function uses [sub?](http://software-lab.de/doc/refS.html#sub?) to find a substring in a string or list.
+  * The `(assert-throws)` function requires the `(throw)` to be [quoted](http://software-lab.de/doc/refQ.html#quote).
 
 # Examples
 

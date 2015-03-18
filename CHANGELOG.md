@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 (2015-03-19)
+
+ * Add new assertion: assert-throws
+ * Minor refactor with (plural?)
+ * Stylistic changes to MODULE_INFO (credit Alexander Burger)
+ * Update README.md
+
 ## 0.2.1 (2015-03-18)
 
  * Version bump, includes README.md and working .travis.yml
