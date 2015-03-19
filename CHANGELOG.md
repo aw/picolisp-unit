@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 (2015-03-19)
+
+ * Move MODULE_INFO into module.l
+
 ## 0.3.0 (2015-03-19)
 
  * Add new assertion: assert-throws

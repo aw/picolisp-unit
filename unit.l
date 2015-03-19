@@ -1,13 +1,12 @@
+# unit.l
+#
+# The MIT License (MIT)
+#
+# Copyright (c) 2015 Alexander Williams, Unscramble <license@unscramble.jp>
+
 (when symbols (symbols 'unit 'pico))
 
-[de MODULE_INFO
-  ("name"       "unit")
-  ("version"    "0.3.0")
-  ("summary"    "Unit Testing framework for PicoLisp")
-  ("source"     "https://github.com/aw/picolisp-unit.git")
-  ("author"     "Alexander Williams")
-  ("license"    "MIT")
-  ("copyright"  "(c) 2015 Alexander Williams, Unscramble <license@unscramble.jp>") ]
+(load (pack (car (file)) "module.l"))
 
 (setq
   *Colours  '(("red"    . 1)

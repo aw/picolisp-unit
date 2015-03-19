@@ -169,7 +169,7 @@ pil +
 
 # Testing
 
-This library has its own set of tests. You can use those are examples as well. To run these types:
+This library has its own set of tests. You can use those as examples as well. To run them type:
 
     ./test.l
 
