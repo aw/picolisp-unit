@@ -15,14 +15,16 @@ This document is split into a few sections:
   * [System calls](#system-calls)
   * [Printing data](#printing-data)
 3. [Public functions](#public-functions): Executing and asserting tests
-  * [Executing a series a test and accumulating results](#executing-tests)
+  * [Executing a series of tests](#executing-tests)
   * [Asserting test results](#assertions)
 
 Make sure you read the [README](README.md) to get an idea of what this library does.
 
 # Namespace leaky globals
 
-Previously, I thought namespaces would protect my variables from modifying the (`'pico`) namespace. **I was wrong**.
+Previously, I thought namespaces would protect my variables from modifying the `'pico` namespace.
+
+**I was wrong**.
 
 Here's an example:
 
