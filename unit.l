@@ -6,6 +6,9 @@
 
 (when symbols (symbols 'unit 'pico))
 
+(local MODULE_INFO *Colours *My_tests_are_order_dependent *Passed *Failed *Counter)
+(local colour randomize plural? passed failed print-report report-failed print-error print-expected print-got exit-gracefully)
+
 (load (pack (car (file)) "module.l"))
 
 (setq
