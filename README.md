@@ -6,6 +6,8 @@ This library can be used for Unit Testing your [PicoLisp](http://picolisp.com/) 
 
 ![picolisp-unit](https://cloud.githubusercontent.com/assets/153401/6712097/b1b77e14-cd82-11e4-9603-cae666b8655d.png)
 
+Please read [EXPLAIN.md](EXPLAIN.md) to learn more about PicoLisp and this Unit Testing framework.
+
   1. [Requirements](#requirements)
   2. [Getting Started](#getting-started)
   3. [Usage](#usage)
