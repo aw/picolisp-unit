@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 (2015-03-24)
+
+ * Avoid leaking global variables such as MODULE_INFO, *Colours, *Counter..
+
 ## 0.3.1 (2015-03-19)
 
  * Move MODULE_INFO into module.l
