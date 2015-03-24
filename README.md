@@ -56,7 +56,7 @@ Only a few assertions exist for the moment; more [can](#contributing)/will be ad
 | (assert-nil) | Result Message | `(assert-nil NIL "It must be NIL")` |
 | (assert-t) | Result Message | `(assert-t T "I pity the fool!")` |
 | (assert-includes) | String List Message | `(assert-includes "abc" '("def") "It includes abc")` |
-| (assert-kind-of) | Type Value Message | `(assert-equal 'Number 42 "The answer..")` |
+| (assert-kind-of) | Type Value Message | `(assert-kind-of 'Number 42 "The answer..")` |
 | (assert-throws) | Type Error 'Result Message | `(assert-throws 'Err "fail" '(throw 'Err "fail") "Throws a fail")` |
 
 ### (assert-kind-of) types
