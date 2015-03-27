@@ -185,6 +185,10 @@ If you find any bugs or issues, please [create an issue](https://github.com/aw/p
 
 If you want to improve this library, please make a pull-request.
 
+### Contributors
+
+* [Rick Hanson](@cryptorick)
+
 # License
 
 [MIT License](LICENSE)
