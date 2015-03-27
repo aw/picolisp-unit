@@ -187,7 +187,7 @@ If you want to improve this library, please make a pull-request.
 
 ### Contributors
 
-* [Rick Hanson](@cryptorick)
+* @cryptorick [Rick Hanson](https://github.com/cryptorick)
 
 # License
 
