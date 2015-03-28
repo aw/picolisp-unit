@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 (2015-03-28)
+
+ * Documentation update
+
 ## 0.4.0 (2015-03-24)
 
  * Avoid leaking global variables such as MODULE_INFO, *Colours, *Counter..
