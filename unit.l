@@ -6,8 +6,9 @@
 
 (when symbols (symbols 'unit 'pico))
 
-(local MODULE_INFO *Colours *My_tests_are_order_dependent *Passed *Failed *Counter)
+(local MODULE_INFO *Colours *My_tests_are_order_dependent *Passed *Failed *Counter *Results)
 (local colour randomize plural? passed failed print-report report-failed print-error print-expected print-got exit-gracefully)
+(local print-passed print-failed)
 
 (load (pack (car (file)) "module.l"))
 
@@ -20,7 +21,8 @@
   *My_tests_are_order_dependent NIL
   *Passed                       0
   *Failed                       NIL
-  *Counter                      0 )
+  *Counter                      0
+  *Results                      NIL )
 
 
 # initialize
@@ -42,26 +44,39 @@
 [de plural? (String)
   (when (not (= (length String) 1)) "s") ]
 
-[de passed @
+[de print-passed @
   (prinl  (colour "green")
           (char (hex "2713"))
           (align 2 " ")
           (colour)
-          (next) )
+          (next) ) ]
 
-  (inc '*Passed) ]
-
-[de failed (Expected Result Message)
+[de print-failed (Message Expected Result)
   (prinl  (colour "red")
           (char (hex "2715"))
           (align 2 " ")
           Message
-          (colour) )
+          (colour) ]
 
-  (queue '*Failed (list *Counter Expected Result Message)) ]
+[de passed @
+  (inc '*Passed)
+  (inc '*Counter)
+  (queue '*Results (list T *Counter Message))
+  T ]
 
+[de failed (Expected Result Message)
+  (inc '*Counter)
+  (queue '*Failed  (list *Counter Expected Result Message))
+  (queue '*Results (list NIL *Counter Message Expected Result))
+  NIL ]
 
 [de print-report ()
+  (mapcar '((N) (prin (align 3 (cadr N)) ") ")
+                (if (=T (car N))
+                    (print-passed (cddr N))
+                    (print-failed (cddr N)) ) )
+          *Results )
+
   (prinl  (colour "bold")
           "----^J"
           (colour "green")
@@ -123,7 +138,7 @@
 # public
 (de execute @
   (mapcar
-    '((N) (prin (align 3 (inc '*Counter)) ") ") (eval N))
+    '((N) (eval N))
     (randomize (rest)) ]
 
 [de assert-equal (Expected Result Message)

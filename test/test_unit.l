@@ -1,7 +1,5 @@
 (setq *My_tests_are_order_dependent NIL)
 
-(prinl "^J  Testing Unit Testing^J")
-
 [execute
   '(assert-equal 0 0 "(assert-equal) should assert equal values")
   '(assert-nil   NIL "(assert-nil) should assert NIL")
