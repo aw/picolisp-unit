@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.1 (2015-03-29)
+
+  * Small refactor: replace anonymous function with simpler eval
+  * Update EXPLAIN.md
+
 ## 0.5.0 (2015-03-29)
 
   * Assertions now return T or NIL, for passed or failed tests

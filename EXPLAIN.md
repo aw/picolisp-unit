@@ -161,15 +161,11 @@ The 1st argument (anonymous function) generates a random number between 1 and th
 It's crazy how that works. I'm not even sure how I came up with that.
 
 ```lisp
-(de execute @
-  (mapcar
-    '((N) (prin (align 3 (inc '*Counter)) ") ") (eval N))
-    (randomize (rest)) ]
+[de execute @
+  (mapcar eval (randomize (rest) ]
 ```
 
-Once our list of tests is randomized, we run it through our favourite [mapcar](http://software-lab.de/doc/refM.html#mapcar) function which prints the test's number, stored in `*Counter`, aligned to 3 columns, and then evaluates (runs) the test using the infamous [eval](http://software-lab.de/doc/refE.html#eval).
-
-The `(align 3)` allows the test numbers to go from 1 to 999 without breaking the beautiful output. We can increase that when someone actually encounters that problem.
+Once our list of tests is randomized, we run it through our favourite [mapcar](http://software-lab.de/doc/refM.html#mapcar) function which evaluates (runs) the test using the infamous [eval](http://software-lab.de/doc/refE.html#eval).
 
 > **Note:* Technically, assertions don't catch errors, so if your assertion were to throw an unhandled error, then the entire test suite would fail and ugly things will happen. In fact, your terminals colours might not even get reset. That's a good thing. You should handle your errors.
 
@@ -187,6 +183,8 @@ This library introduces simple wrappers around those predicates, which then call
 ```
 
 This one is quite simple, all it does is check if `Expected` is equal to `Result`.
+
+The `(passed)` and `(failed)` functions will return `T` or `NIL`, respectively, so these can be used within your own code as well, not only in the context of unit tests.
 
 The [other assertions](https://github.com/aw/picolisp-unit/blob/master/README.md#assertions-table) are quite similar and seem to cover most test cases. I've considered adding opposite tests such as `refute`, but I've rarely found a need for them as there are alternate approaches.
 

@@ -136,10 +136,8 @@
 
 
 # public
-(de execute @
-  (mapcar
-    '((N) (eval N))
-    (randomize (rest)) ]
+[de execute @
+  (mapcar eval (randomize (rest) ]
 
 [de assert-equal (Expected Result Message)
   (if (= Expected Result)
