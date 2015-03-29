@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 (2015-03-29)
+
+  * Assertions now return T or NIL, for passed or failed tests
+  * Nothing is printed to the display if (report) is not called
+  * All test results are accumulated in *Results global variable
+
 ## 0.4.1 (2015-03-28)
 
  * Documentation update

@@ -79,6 +79,20 @@ There are 5 types currently defined:
   * Colours and bold text are only displayed if your terminal supports it, and if your system has the `tput` command.
   * The `(assert-includes)` function uses [sub?](http://software-lab.de/doc/refS.html#sub?) to find a substring in a string or list.
   * The `(assert-throws)` function requires the `(throw)` to be [quoted](http://software-lab.de/doc/refQ.html#quote).
+  * Assertions return `T` if the test passed, and `NIL` if the test failed
+  * Results of all tests are accumulated in the `*Results` global variable
+
+### Test results
+
+The `*Results` global variable is a list of lists, which will have one of two formats:
+
+    ((NIL 1 "should be NIL" NIL T) (T 2 "should be NIL"))
+
+  1. `NIL` or `T` in the `(car)` if the test failed or passed, respectively
+  2. Number indicating the counter for the test
+  3. Message of the test
+  4. Expected result (only when the test failed)
+  5. Actual result (only when the test failed)
 
 # Examples
 
