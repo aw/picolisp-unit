@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.2 (2015-03-29)
+
+  * Fix small potential bug in (passed)
+
 ## 0.5.1 (2015-03-29)
 
   * Small refactor: replace anonymous function with simpler eval

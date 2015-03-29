@@ -58,7 +58,7 @@
           Message
           (colour) ]
 
-[de passed @
+[de passed (Message)
   (inc '*Passed)
   (inc '*Counter)
   (queue '*Results (list T *Counter Message))
