@@ -134,7 +134,7 @@ pil +
   9) ✓  (assert-kind-of) should assert a Atom
  10) ✓  (assert-kind-of) should assert a String
 
--> (1 2 3 4 5 6 7 8 9 10)
+-> (T T T T T T T T T T)
 ```
 
 ### When tests fail
@@ -154,6 +154,8 @@ pil +
 (report)
 
 # output
+
+-> (T NIL NIL NIL NIL)
 
   1) ✓  (assert-nil) should assert NIL
   2) ✕  (assert-kind-of) should assert a Flag (NIL)
