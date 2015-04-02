@@ -10,4 +10,4 @@ before_script:
   - cd /tmp/picoLisp/src64 && make
 
 script:
-  - cd ${TRAVIS_BUILD_DIR} && /tmp/picoLisp/pil test.l
+  - cd ${TRAVIS_BUILD_DIR} && (for i in plain default; do TEST_REPORTER="$i" /tmp/picoLisp/pil test.l; done)

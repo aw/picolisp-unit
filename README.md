@@ -13,9 +13,10 @@ Please read [EXPLAIN.md](EXPLAIN.md) to learn more about PicoLisp and this Unit 
   3. [Usage](#usage)
   4. [Examples](#examples)
   5. [Testing](#testing)
-  6. [Alternatives](#alternatives)  
-  7. [Contributing](#contributing)
-  8. [License](#license)
+  6. [Reporters](#reporters)
+  7. [Alternatives](#alternatives)
+  8. [Contributing](#contributing)
+  9. [License](#license)
 
 # Requirements
 
@@ -190,6 +191,41 @@ pil +
 This library has its own set of tests. You can use those as examples as well. To run them type:
 
     ./test.l
+
+# Reporters
+
+If you don't call `(report)`, the test results will not be printed to the screen.
+
+This allows you to create your own custom reporter and use it to output the test results however you like.
+
+There are two existing reporters, to use one set the `TEST_REPORTER` environment variable:
+
+    TEST_REPORTER=plain ./test.l
+
+or
+
+    TEST_REPORTER=default ./test.l
+
+### Creating a custom reporter
+
+Your custom reporter only needs to implement the `(print-report)` function. This gets called by the public `(report)` function.
+
+Add a file to the `reporters/` directory (ex: `custom.l`). The filename (without `.l` extension) will be the name of your reporter.
+
+You can use any of the following helper functions/variables:
+
+  * `(colour)`
+  * `(plural?)`
+  * `(get-results)`
+  * `*Results` global variable
+
+> **Note:** Avoid using the internal functions as they might change without notice.
+
+  * All test results can be obtained with the `*Results` global variable.
+  * All _failed_ results can be obtained with `(get-results NIL)`.
+  * All _passed_ results can be obtained with `(get-results T)`.
+
+Please make a pull-request if you would like your custom reporter to be added to this library.
 
 # Alternatives
 

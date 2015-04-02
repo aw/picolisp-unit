@@ -6,22 +6,14 @@
 
 (when symbols (symbols 'unit 'pico))
 
-(local MODULE_INFO *Colours *My_tests_are_order_dependent *Passed *Failed *Counter *Results)
-(local colour randomize plural? passed failed print-report report-failed print-error print-expected print-got exit-gracefully)
-(local print-passed print-failed)
+(local MODULE_INFO *My_tests_are_order_dependent *Results)
+(local randomize passed failed queue-results colour plural? get-results)
 
 (load (pack (car (file)) "module.l"))
+(load (pack (car (file)) "reporters/" (if (sys "TEST_REPORTER") @ "default") ".l"))
 
 (setq
-  *Colours  '(("red"    . 1)
-              ("green"  . 2)
-              ("yellow" . 3)
-              ("blue"   . 4) )
-
   *My_tests_are_order_dependent NIL
-  *Passed                       0
-  *Failed                       NIL
-  *Counter                      0
   *Results                      NIL )
 
 
@@ -30,109 +22,38 @@
 
 
 # internal
+[de randomize (List)
+  (if *My_tests_are_order_dependent
+      List
+      (by '((N) (rand 1 (size List))) sort List) ]
+
+[de passed (Message)
+  (queue-results T Message) ]
+
+[de failed (Expected Result Message)
+  (queue-results NIL Message Expected Result) ]
+
+[de queue-results (Flag . @)
+  (queue '*Results
+    (pass list
+          Flag
+          (inc (length *Results)) ) )
+
+  Flag ]
+
+
+# reporter
 [de colour (Colour)
   (cond ((assoc (lowc Colour) *Colours) (call 'tput "setaf" (cdr @)))
         ((= (lowc Colour) "bold")       (call 'tput "bold"))
         (T                              (call 'tput "sgr0")) )
   NIL ]
 
-[de randomize (List)
-  (if *My_tests_are_order_dependent
-      List
-      (by '((N) (rand 1 (size List))) sort List) ]
-
 [de plural? (String)
   (when (not (= (length String) 1)) "s") ]
 
-[de print-passed @
-  (prinl  (colour "green")
-          (char (hex "2713"))
-          (align 2 " ")
-          (colour)
-          (next) ) ]
-
-[de print-failed (Message Expected Result)
-  (prinl  (colour "red")
-          (char (hex "2715"))
-          (align 2 " ")
-          Message
-          (colour) ]
-
-[de passed (Message)
-  (inc '*Passed)
-  (inc '*Counter)
-  (queue '*Results (list T *Counter Message))
-  T ]
-
-[de failed (Expected Result Message)
-  (inc '*Counter)
-  (queue '*Failed  (list *Counter Expected Result Message))
-  (queue '*Results (list NIL *Counter Message Expected Result))
-  NIL ]
-
-[de print-report ()
-  (mapcar '((N) (prin (align 3 (cadr N)) ") ")
-                (if (=T (car N))
-                    (print-passed (cddr N))
-                    (print-failed (cddr N)) ) )
-          *Results )
-
-  (prinl  (colour "bold")
-          "----^J"
-          (colour "green")
-          *Passed
-          " test" (plural? *Passed)
-          " passed, "
-          (colour "red")
-          (length *Failed)
-          " test" (plural? *Failed)
-          " failed"
-          (colour) )
-
-  (report-failed)
-  (exit-gracefully) ]
-
-(de report-failed ()
-  (when *Failed
-    (prinl "^J" (colour "red") "^J  Failed test" (plural? *Failed) ": ")
-
-    (mapcar
-      '((N) (print-error (car N) (cdddr N))
-            (print-expected (cadr N))
-            (print-got (caddr N)) )
-      *Failed )
-
-    (colour) ]
-
-[de print-error (Number Result)
-  (prinl  (colour "red")
-          "^J"
-          (align 4 " - ")
-          Number
-          ")  "
-          Result
-          (colour) ]
-
-[de print-expected (Result)
-  (prin (align 8 " ")
-        "Expected: "
-        (colour "green") )
-
-  (println Result)
-  (colour) ]
-
-[de print-got (Result)
-  (prin (align 8 " ")
-        (align 10 " Actual: ")
-        (colour "red") )
-
-  (println Result)
-  (colour) ]
-
-[de exit-gracefully ()
-  (if (gt0 (length *Failed))
-      (bye 1)
-      (bye) ]
+(de get-results (Type)
+  (filter '((N) (= Type (car N))) *Results) )
 
 
 # public
@@ -169,7 +90,7 @@
 
     (if (= Type Result)
         (passed Message)
-        (failed (pack Value " should be of type " Type) Result Message) ]
+        (failed (text "@1 should be of type @2" Value Type) Result Message) ]
 
 [de assert-throws (Type Error Result Message)
   (let Result (catch Type (eval Result) NIL)

@@ -7,7 +7,5 @@
     Result ) )
 
 [execute
-  '(assert-nil   (prog (colour "yellow") (colour)) "Set colour to yellow")
-  '(assert-nil   (colour)   "Reset colour")
   '(assert-kind-of 'List (randomize '(1 2)) "Randomize the list")
   '(assert-equal '(1 2 3 4) (test-dont-randomize) "Don't randomize the list") ]
