@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0 (2015-04-05)
+
+  * Move test reporters to their own directory
+  * Add 'plain' reporter with tests
+  * Get rid of *Passed, *Failed, *Counter global variables
+  * Lispify some functions
+  * Update .travis.yml
+  * Update README.md and EXPLAIN.md
+
 ## 0.5.2 (2015-03-29)
 
   * Fix small potential bug in (passed)
