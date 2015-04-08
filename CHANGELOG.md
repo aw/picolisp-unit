@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1 (2015-04-08)
+
+  * Suppress errors if the 'tput' command doesn't exist
+
 ## 0.6.0 (2015-04-05)
 
   * Move test reporters to their own directory

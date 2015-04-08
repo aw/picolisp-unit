@@ -44,10 +44,11 @@
 
 # reporter
 [de colour (Colour)
-  (cond ((assoc (lowc Colour) *Colours) (call 'tput "setaf" (cdr @)))
-        ((= (lowc Colour) "bold")       (call 'tput "bold"))
-        (T                              (call 'tput "sgr0")) )
-  NIL ]
+  (err "/dev/null"
+    (cond ((assoc (lowc Colour) *Colours) (call 'tput "setaf" (cdr @)))
+          ((= (lowc Colour) "bold")       (call 'tput "bold"))
+          (T                              (call 'tput "sgr0")) )
+    NIL ]
 
 [de plural? (String)
   (when (not (= (length String) 1)) "s") ]
