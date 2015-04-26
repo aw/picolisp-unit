@@ -7,5 +7,5 @@
     Result ) )
 
 [execute
-  '(assert-kind-of 'List (randomize '(1 2)) "Randomize the list")
-  '(assert-equal '(1 2 3 4) (test-dont-randomize) "Don't randomize the list") ]
+  (assert-kind-of 'List (randomize '(1 2)) "Randomize the list")
+  (assert-equal '(1 2 3 4) (test-dont-randomize) "Don't randomize the list") ]
