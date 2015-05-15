@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.2 (2015-05-15)
+
+  * Use 'unless' instead of 'when not ='
+  * Don't rely on scoped variables
+  * Remove unused arguments in 'print-failed'
+
 ## 0.6.1 (2015-04-08)
 
   * Suppress errors if the 'tput' command doesn't exist
