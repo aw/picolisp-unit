@@ -51,7 +51,7 @@
     NIL ]
 
 [de plural? (String)
-  (when (not (= (length String) 1)) "s") ]
+  (unless (= (length String) 1) "s") ]
 
 (de get-results (Type)
   (filter '((N) (= Type (car N))) *Results) )

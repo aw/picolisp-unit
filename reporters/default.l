@@ -35,8 +35,8 @@
             " failed"
             (colour) )
 
-    (report-failed)
-    (exit-gracefully) ]
+    (report-failed Failed_results)
+    (exit-gracefully Failed_results) ]
 
 [de print-passed @
   (prinl  (colour "green")
@@ -45,14 +45,14 @@
           (colour)
           (next) ) ]
 
-[de print-failed (Message Expected Result)
+[de print-failed (Message)
   (prinl  (colour "red")
           (char (hex "2715"))
           (align 2 " ")
           Message
           (colour) ]
 
-(de report-failed ()
+(de report-failed (Failed_results)
   (when Failed_results
     (prinl "^J" (colour "red") "^J  Failed test" (plural? Failed_results) ": ")
 
@@ -89,7 +89,7 @@
   (println Result)
   (colour) ]
 
-[de exit-gracefully ()
+[de exit-gracefully (Failed_results)
   (if Failed_results
       (bye 1)
       (bye) ]
