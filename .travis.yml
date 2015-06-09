@@ -3,7 +3,7 @@ sudo: false
 cache: apt
 
 before_script:
-  - wget http://software-lab.de/picoLisp-3.1.9.tgz -O /tmp/picolisp.tgz
+  - wget http://software-lab.de/picoLisp.tgz -O /tmp/picolisp.tgz
   - cd /tmp; tar -xf /tmp/picolisp.tgz
   - cd /tmp/picoLisp/src64 && make
 

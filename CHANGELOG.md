@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0 (2015-06-09)
+
+  * Production release
+
 ## 0.6.2 (2015-05-15)
 
   * Use 'unless' instead of 'when not ='
