@@ -21,6 +21,7 @@ Please read [EXPLAIN.md](EXPLAIN.md) to learn more about PicoLisp and this Unit 
 # Requirements
 
   * PicoLisp 32-bit or 64-bit v3.1.9+
+  * Tested up to PicoLisp v16.12
 
 # Getting Started
 
