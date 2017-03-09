@@ -39,7 +39,9 @@ Here are some guidelines on how to use `unit.l`, but you're free to poke around 
 
 There exists a few public functions: `(execute)`, `(report)`, and a bunch of `(assert-X)` where X is a type of assertion.
 
-> **Note for 64-bit PicoLisp:** you can use `(symbols 'unit)` (or the prefix: `unit~`).
+> **Note:** Namespaces can be disabled by setting the environment variable `PIL_NO_NAMESPACES=true`
+
+> **Note for 64-bit PicoLisp:** you can use `(symbols 'unit)` (or the prefix: `unit~`). Ignored if `PIL_NO_NAMESPACES=true`
 
 > **Note for 32-bit PicoLisp:** you don't have access to `(symbols)`, so these functions might clash with existing ones.
 
@@ -246,4 +248,4 @@ If you want to improve this library, please make a pull-request.
 
 [MIT License](LICENSE)
 
-Copyright (c) 2015 Alexander Williams, Unscramble <license@unscramble.jp>
+Copyright (c) 2017 Alexander Williams, Unscramble <license@unscramble.jp>

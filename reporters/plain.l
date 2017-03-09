@@ -2,9 +2,9 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2015 Alexander Williams, Unscramble <license@unscramble.jp>
+# Copyright (c) 2017 Alexander Williams, Unscramble <license@unscramble.jp>
 
-(local print-report)
+(unless (sys "PIL_NO_NAMESPACES") (local print-report))
 
 [de print-report ()
   (mapcar println *Results)

@@ -1,6 +1,7 @@
 #!/usr/bin/env pil
 
-(when symbols (symbols 'unit 'pico))
+(unless (sys "PIL_NO_NAMESPACES")
+  (when symbols (symbols 'unit 'pico)) )
 
 (load "unit.l")
 
