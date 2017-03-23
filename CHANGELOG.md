@@ -2,7 +2,7 @@
 
 ## 2.1.0 (2017-03-23)
 
-  * Restore PicoLisp namespaces for backwards compatibility. Disable through PIL_NAMESPACES=false.
+  * Restore PicoLisp namespaces for backwards compatibility. Disable with PIL_NAMESPACES=false
 
 ## 2.0.0 (2017-03-09)
 
