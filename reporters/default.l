@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2017 Alexander Williams, Unscramble <license@unscramble.jp>
 
-(unless (sys "PIL_NO_NAMESPACES")
+(unless (= "false" (sys "PIL_NAMESPACES"))
   (local *Colours print-report print-passed print-failed report-failed print-error)
   (local print-expected print-got exit-gracefully) )
 

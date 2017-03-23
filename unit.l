@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2017 Alexander Williams, Unscramble <license@unscramble.jp>
 
-(unless (sys "PIL_NO_NAMESPACES")
+(unless (= "false" (sys "PIL_NAMESPACES"))
   (when symbols (symbols 'unit 'pico))
 
   (local MODULE_INFO *My_tests_are_order_dependent *Results)
