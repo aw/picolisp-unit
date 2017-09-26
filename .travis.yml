@@ -3,9 +3,9 @@ sudo: false
 cache: apt
 
 before_script:
-  - wget http://software-lab.de/picoLisp-16.12.tgz -O /tmp/picolisp.tgz
+  - wget http://software-lab.de/picoLisp-17.6.tgz -O /tmp/picolisp.tgz
   - cd /tmp; tar -xf /tmp/picolisp.tgz
   - cd /tmp/picoLisp/src64 && make
 
 script:
-  - cd ${TRAVIS_BUILD_DIR} && (for i in plain default; do TEST_REPORTER="$i" /tmp/picoLisp/pil test.l; done)
+  - cd ${TRAVIS_BUILD_DIR} && (for i in plain default; do PIL_NAMESPACES=false TEST_REPORTER="$i" /tmp/picoLisp/pil test.l; done)
