@@ -21,7 +21,7 @@ Please read [EXPLAIN.md](EXPLAIN.md) to learn more about PicoLisp and this Unit 
 # Requirements
 
   * PicoLisp 32-bit or 64-bit v3.1.9+
-  * Tested up to PicoLisp v17.12
+  * Tested up to PicoLisp v18.12
 
 # Getting Started
 
@@ -248,4 +248,4 @@ If you want to improve this library, please make a pull-request.
 
 [MIT License](LICENSE)
 
-Copyright (c) 2015-2018 Alexander Williams, Unscramble <license@unscramble.jp>
+Copyright (c) 2015-2019 Alexander Williams, Unscramble <license@unscramble.jp>
