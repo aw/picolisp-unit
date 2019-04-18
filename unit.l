@@ -2,13 +2,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2017 Alexander Williams, Unscramble <license@unscramble.jp>
-
-(unless (= "false" (sys "PIL_NAMESPACES"))
-  (when symbols (symbols 'unit 'pico))
-
-  (local MODULE_INFO *My_tests_are_order_dependent *Results)
-  (local randomize passed failed queue-results colour plural? get-results) )
+# Copyright (c) 2019 Alexander Williams, Unscramble <license@unscramble.jp>
 
 (load (pack (car (file)) "module.l"))
 (load (pack (car (file)) "reporters/" (if (sys "TEST_REPORTER") @ "default") ".l"))

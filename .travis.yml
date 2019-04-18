@@ -12,4 +12,4 @@ before_script:
   - make clean; make
 
 script:
-  - cd ${TRAVIS_BUILD_DIR} && (for i in plain default; do PIL_NAMESPACES=false TEST_REPORTER="$i" /tmp/picoLisp/pil test.l; done)
+  - cd ${TRAVIS_BUILD_DIR} && (for i in plain default; do TEST_REPORTER="$i" /tmp/picoLisp/pil test.l; done)

@@ -1,8 +1,5 @@
 #!/usr/bin/env pil
 
-(unless (= "false" (sys "PIL_NAMESPACES"))
-  (when symbols (symbols 'unit 'pico)) )
-
 (load "unit.l")
 
 (chdir "test/"

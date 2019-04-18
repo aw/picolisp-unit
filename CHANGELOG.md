@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0 TBD
+
+  * Add Makefile for testing the library
+  * Update supported PicoLisp version to 18.12
+  * **Breaking change:** remove all support for PicoLisp namespaces
+
 ## 2.1.0 (2017-03-23)
 
   * Restore PicoLisp namespaces for backwards compatibility. Disable with PIL_NAMESPACES=false

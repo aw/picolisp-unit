@@ -16,7 +16,8 @@ Please read [EXPLAIN.md](EXPLAIN.md) to learn more about PicoLisp and this Unit 
   6. [Reporters](#reporters)
   7. [Alternatives](#alternatives)
   8. [Contributing](#contributing)
-  9. [License](#license)
+  9. [Changelog](#changelog)
+  10. [License](#license)
 
 # Requirements
 
@@ -38,12 +39,6 @@ This is a pure PicoLisp library with no external dependencies. You can either co
 Here are some guidelines on how to use `unit.l`, but you're free to poke around the code and use it as you wish.
 
 There exists a few public functions: `(execute)`, `(report)`, and a bunch of `(assert-X)` where X is a type of assertion.
-
-> **Note:** Namespaces can be disabled by setting the environment variable `PIL_NAMESPACES=false`
-
-> **Note for 64-bit PicoLisp:** you can use `(symbols 'unit)` (or the prefix: `unit~`). Ignored if `PIL_NAMESPACES=false`
-
-> **Note for 32-bit PicoLisp:** you don't have access to `(symbols)`, so these functions might clash with existing ones.
 
   * **(execute arg1 ..)** Executes arg1 to argN tests
     - `arg1` _Quoted List_: a list of assertions, example `'(assert-nil NIL "I AM NIL")`
@@ -195,6 +190,10 @@ This testing library has its own set of tests (hehe). You can use those as examp
 
     ./test.l
 
+or
+
+    make check
+
 # Reporters
 
 If you don't call `(report)`, the test results will not be printed to the screen.
@@ -243,6 +242,10 @@ If you want to improve this library, please make a pull-request.
 ### Contributors
 
 * @cryptorick [Rick Hanson](https://github.com/cryptorick)
+
+# Changelog
+
+* [Changelog](CHANGELOG.md)
 
 # License
 
