@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.0.0 TBD
+## 3.0.0 (2019-04-19)
 
   * Add Makefile for testing the library
   * Update supported PicoLisp version to 18.12
