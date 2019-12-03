@@ -1,6 +1,6 @@
 # Unit Testing framework for PicoLisp
 
-[![GitHub release](https://img.shields.io/github/release/aw/picolisp-unit.svg)](https://github.com/aw/picolisp-unit) [![Build Status](https://travis-ci.org/aw/picolisp-unit.svg?branch=master)](https://travis-ci.org/aw/picolisp-unit)
+[![GitHub release](https://img.shields.io/github/release/aw/picolisp-unit.svg)](https://github.com/aw/picolisp-unit) ![Build status](https://github.com/aw/picolisp-unit/workflows/CI/badge.svg?branch=master)
 
 This library can be used for Unit Testing your [PicoLisp](http://picolisp.com/) code.
 
@@ -21,8 +21,8 @@ Please read [EXPLAIN.md](EXPLAIN.md) to learn more about PicoLisp and this Unit 
 
 # Requirements
 
-  * PicoLisp 32-bit or 64-bit v3.1.9+
-  * Tested up to PicoLisp v18.12
+  * PicoLisp 32-bit or 64-bit `v3.1.9+`
+  * Tested up to PicoLisp `v19.11.25`, [see test runs](https://github.com/aw/picolisp-unit/commit/1a455ba10058dffacfb3d4ef930c89ee82a57a83/checks)
 
 # Getting Started
 

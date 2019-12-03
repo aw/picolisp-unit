@@ -1,0 +1,25 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 5
+
+    strategy:
+      matrix:
+        arch: ['src', 'src64']
+        version: ['17.12', '18.6', '18.12', '19.6', 'latest']
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: aw/picolisp-action@v1
+        with:
+          version: ${{matrix.version}}
+          architecture: ${{matrix.arch}}
+
+      - name: Run the tests on PicoLisp ${{matrix.arch}} v${{matrix.version}}
+        run: make check
