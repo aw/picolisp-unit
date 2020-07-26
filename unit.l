@@ -2,7 +2,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2019 Alexander Williams, Unscramble <license@unscramble.jp>
+# Copyright (c) 2020 Alexander Williams, Unscramble <license@unscramble.jp>
 
 (load (pack (car (file)) "module.l"))
 (load (pack (car (file)) "reporters/" (if (sys "TEST_REPORTER") @ "default") ".l"))

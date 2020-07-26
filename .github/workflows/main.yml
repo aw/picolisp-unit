@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         arch: ['src', 'src64']
-        version: ['17.12', '18.6', '18.12', '19.6', 'latest']
+        version: ['17.12', '18.6', '18.12', '19.6', '19.12', '20.6', 'latest']
 
     steps:
       - uses: actions/checkout@v1

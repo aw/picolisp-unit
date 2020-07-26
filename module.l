@@ -5,4 +5,4 @@
   ("source"     "https://github.com/aw/picolisp-unit.git")
   ("author"     "Alexander Williams")
   ("license"    "MIT")
-  ("copyright"  "(c) 2019 Alexander Williams, Unscramble <license@unscramble.jp>") ]
+  ("copyright"  "(c) 2020 Alexander Williams, Unscramble <license@unscramble.jp>") ]

@@ -2,7 +2,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2017 Alexander Williams, Unscramble <license@unscramble.jp>
+# Copyright (c) 2020 Alexander Williams, Unscramble <license@unscramble.jp>
 
 (de *Colours  ("red"    . 1)
               ("green"  . 2)
