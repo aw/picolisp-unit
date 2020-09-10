@@ -21,7 +21,7 @@ Please read [EXPLAIN.md](EXPLAIN.md) to learn more about PicoLisp and this Unit 
 
 # Requirements
 
-  * PicoLisp 32-bit or 64-bit `v3.1.9+`
+  * PicoLisp 32-bit or 64-bit `v3.1.9+`, or `pil21`
   * Tested up to PicoLisp `v20.6.29`, [see test runs](https://github.com/aw/picolisp-unit/commit/1a455ba10058dffacfb3d4ef930c89ee82a57a83/checks)
 
 # Getting Started

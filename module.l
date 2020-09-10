@@ -1,6 +1,6 @@
 [de MODULE_INFO
   ("name"       "unit")
-  ("version"    "3.0.0")
+  ("version"    "3.1.0")
   ("summary"    "Unit Testing framework for PicoLisp")
   ("source"     "https://github.com/aw/picolisp-unit.git")
   ("author"     "Alexander Williams")

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.0 (2020-09-10)
+
+  * Remove colour of output for 'passed' tests in default reporter, 10x speed increase when tests pass
+  * Update supported PicoLisp versions to 19.6, 19.12, 20.6, pil21
+
 ## 3.0.0 (2019-04-19)
 
   * Add Makefile for testing the library

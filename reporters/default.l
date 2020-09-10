@@ -36,10 +36,8 @@
     (exit-gracefully Failed_results) ]
 
 [de print-passed @
-  (prinl  (colour "green")
-          (char (hex "2713"))
+  (prinl  (char (hex "2713"))
           (align 2 " ")
-          (colour)
           (next) ) ]
 
 [de print-failed (Message)
